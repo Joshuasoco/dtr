@@ -13,11 +13,10 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Remove background-blend-mode: scre; as it's not needed */
 }
 
 header {
-  margin-top: -20px;
+  margin-top: -10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -37,7 +36,6 @@ header {
 .nav-logo {
   display: flex;
   font-size: 32px;
-  font-weight: 700;
   align-items: center;
   color: #000000;
 }
@@ -66,7 +64,7 @@ header {
 }
 /*animation of underline*/
 .nav-link {
-  font-size: 18px;
+  font-size: 21px;
   color: #000000;
   position: relative;
   padding: 0.2em 0;
@@ -88,7 +86,7 @@ header {
   opacity: 0;
   transition: opacity 300ms, transform 300ms;
 }
-
+/* issued code!!!*/
 .nav-link:hover::after,
 .nav-link.active::after {
   opacity: 1;
@@ -108,6 +106,7 @@ main {
 }
 
 .headwelcome p {
+  font-weight: bolder;
   margin-top: 10%;
   font-size: 20px;
   max-width: 600px;
@@ -128,8 +127,7 @@ main {
   color: #35a062;
 }
 .rightlogo {
-  /* Option 1: Using padding instead of margin */
-  padding-top: 5px;
+  margin-top: -55px;
   display: block;
   object-fit: contain;
   max-width: 538px;
