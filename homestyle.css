@@ -9,7 +9,7 @@
   outline: none;
 }
 body {
-  background-image: linear-gradient(rgba(145, 145, 145, 1), rgba(104, 104, 104, 0.2)), url("background-laptops.jpg");
+  background-image: linear-gradient(rgb(233, 233, 233), rgba(226, 226, 226, 0.5)), url("background-laptops.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -137,6 +137,7 @@ main {
 }
 
 .button-form {
+  font-weight: bold;
   border-radius: 10px;
   background-color: #35a062;
   color: white;
