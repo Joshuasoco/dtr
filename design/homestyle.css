@@ -34,8 +34,11 @@ header {
 }
 
 .nav-logo {
+  font-family: "Varela Round", serif;
+  font-style: normal;
   display: flex;
   font-size: 32px;
+  font-weight: 400;
   align-items: center;
   color: #000000;
 }
@@ -48,6 +51,7 @@ header {
 }
 
 .nav-menu {
+  font-family: "Varela Round", serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +142,8 @@ main {
 }
 
 .button-form {
-  font-weight: bold;
+  font-family: "Varela Round", serif;
+  font-weight: 300;
   border-radius: 10px;
   background-color: #35a062;
   color: white;
