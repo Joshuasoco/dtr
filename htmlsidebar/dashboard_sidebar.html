@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hk Duty Tracker</title>
+    <link rel="icon" href="/images/icontitle.png" />
+    <link rel="stylesheet" type="text/css" href="/design/css_sidebar.css" />
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Quicksand:wght@300..700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="content">
+            <h1 class="title_db">Dashboard</h1>
+            <h2 class="subtitle">Student list</h2>
+            <div class="header-container">
+            <p class="all-students">All student&nbsp;&nbsp;<!----></p>
+            <div class="search">
+                <input type="text" placeholder="Search" />
+                <button><i class="bx bx-search"></i></button>
+                <button class="add_new">+&nbsp;&nbsp;&nbsp;&nbsp; Add New</button>
+                <button class="edit"><i class='bx bxs-pencil'></i>Edit</button>            </div>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Course</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>21</td>
+                            <td>Computer Science</td>
+                            <td><button class="action-btn">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>22</td>
+                            <td>Business Administration</td>
+                            <td><button class="action-btn">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Emily White</td>
+                            <td>20</td>
+                            <td>Graphic Design</td>
+                            <td><button class="action-btn">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <div class="wrapper">
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <a href="html_sidebar.html">
+                    <img src="/images/phinmasvg.svg" alt="Upang logo" class="phinmalogo" />
+                    <span class="title">HK Duty Tracker</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="user">
+            <i class="bx bx-user-circle"></i>
+            <div class="name">
+                <p>John Doe</p>
+                <p class="role">Admin</p>
+            </div>
+        </div>
+
+        <hr class="line" />
+
+        <ul>
+            <li>
+                <i class="bx bx-home"></i>
+                <a href="/htmlsidebar/html_sidebar.html" class="menu">Home</a>
+            </li>
+            <li>
+                <i class="bx bx-store"></i>
+                <a href="dashboard_sidebar.html" class="menu">Dashboard</a>
+            </li>
+            <li>
+                <i class="bx bx-news"></i>
+                <a href="#" class="menu">HK Student</a>
+            </li>
+        </ul>
+
+        <hr class="line_2" />
+
+        <div class="profilelinks">
+            <a href="#">
+                <img src="/images/profile-minus-1353-svgrepo-com.svg" alt="click to visit profile" class="profilelogo">
+                <span class="profile_text">Profile</span>
+            </a>
+        </div>
+
+        <div class="logout">
+            <a href="#" onclick="logout()">
+                <img src="/images/logout-svgrepo-com.svg" alt="click to logout" class="logoutlogo">
+                <span class="logout_text">Logout</span>
+            </a>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
