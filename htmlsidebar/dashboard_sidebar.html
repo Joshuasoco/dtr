@@ -19,7 +19,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <div class="main-content">
       <div class="content">
@@ -32,7 +31,7 @@
           <div class="search">
             <span><i class="bx bx-search-alt-2"></i></span>
             <input type="text" placeholder="Search" />
-            <button class="add_new">+&nbsp;&nbsp;&nbsp;&nbsp; Add New</button>
+            <a class="add_new" href="#divOne">+&nbsp;&nbsp;&nbsp;&nbsp; Add New</a>
             <button class="edit" id="edit_button"><i class="bx bxs-pencil"></i>Edit</button>
           </div>
         </div>
@@ -52,7 +51,7 @@
               <tr>
                 <td>03-2324-031234</td>
                 <td>John Doe</td>
-                <td>21</td>
+                <td>50</td>
                 <td>Computer Science</td>
                 <td>FACILITATOR</td>
                 <td>86</td>
@@ -60,7 +59,7 @@
               <tr>
                 <td>03-2324-031234</td>
                 <td>Jane Smith</td>
-                <td>22</td>
+                <td>75</td>
                 <td>Business Administration</td>
                 <td>FACILITATOR</td>
                 <td>86</td>
@@ -68,7 +67,7 @@
               <tr>
                 <td>03-2324-031234</td>
                 <td>Emily White</td>
-                <td>20</td>
+                <td>25</td>
                 <td>Graphic Design</td>
                 <td>FACILITATOR</td>
                 <td>86</td>
@@ -140,6 +139,29 @@
             />
             <span class="logout_text">Logout</span>
           </a>
+        </div>
+      </div>
+    </div>
+    <div class="overlay" id="divOne">
+      <div class="popup">
+        <h2>Add New Student</h2>
+        <a href="#" class="close  " id="closePopup">&times;</a>
+        <div class="popup-content">
+          <form action="" method="post">
+            <label for="student_id">Student ID</label>
+            <input type="text" id="student_id" name="student_id" placeholder="Enter Student ID" />
+            <label for="student_name">Student Name</label>
+            <input type="text" id="student_name" name="student_name" placeholder="Enter Student Name" />
+            <label for="hk_type">HK Type</label>
+            <input type="text" id="hk_type" name="hk_type" placeholder="Enter HK Type" />
+            <label for="course_code">Course Code</label>
+            <input type="text" id="course_code" name="course_code" placeholder="Enter Course Code" />
+            <label for="hk_duty_status">HK Duty Status</label>
+            <input type="text" id="hk_duty_status" name="hk_duty_status" placeholder="Enter HK Duty Status" />
+            <label for="rendered_hours">Rendered Hours</label>
+            <input type="text" id="rendered_hours" name="rendered_hours" placeholder="Enter Rendered Hours" />
+            <button type="submit">Add</button>
+          </form>
         </div>
       </div>
     </div>

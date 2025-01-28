@@ -28,3 +28,27 @@ document.getElementById("edit_button").addEventListener("click", function () {
     allStudentsCheckbox.style.display = "inline-block"; // Show checkbox in Delete mode
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const addNewLink = document.querySelector(".add_new");
+  const popupOverlay = document.getElementById("divOne");
+  const closePopupButton = document.getElementById("closePopup");
+
+  // Show the popup
+  addNewLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    popupOverlay.style.display = "flex";
+  });
+
+  // Close the popup
+  closePopupButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    popupOverlay.style.display = "none";
+  });
+
+  // Close the popup when clicking outside it
+  popupOverlay.addEventListener("click", (e) => {
+    if (e.target === popupOverlay) {
+      popupOverlay.style.display = "none";
+    }
+  });
+});
