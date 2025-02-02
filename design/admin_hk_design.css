@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+
+/* Sidebar container */
+.sidebar {
+  width: 235px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 10px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.phinmalogo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.title {
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* User section */
+.user {
+  height: 55px;
+  width: 200px;
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  padding: 12px;
+  gap: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.user i {
+  font-size: 36px;
+  color: #000000;
+  margin: 0;
+}
+
+.name {
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  margin-left: 15px;
+}
+
+.role {
+  font-family: "Varela Round", sans-serif;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Divider lines */
+.line {
+  border: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  margin: 10px 15px;
+  width: 80%;
+}
+
+/* Sidebar links */
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+ul li {
+  padding: 20px 0;
+  border-radius: 4%;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  transition: all 0.3s ease;
+  width: 205px;
+  position: relative;
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+ul li:hover {
+  background-color: hsl(136, 75%, 69%);
+  cursor: pointer;
+  width: 210px;
+  border-radius: 12px;
+}
+
+ul li i {
+  border: 0 solid #777777;
+  border-radius: 4%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 10px;
+  color: #000000;
+  position: absolute;
+  left: 5px;
+  transition: transform 0.3s ease;
+}
+
+ul li:hover i {
+  color: hsl(136, 75%, 69%);
+  transform: translateX(5px);
+  background-color: #ffffff;
+}
+
+ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #000000;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 60px;
+  position: relative;
+  margin-left: 30px;
+}
+
+ul li:hover a {
+  color: #ffffff;
+}
+
+.line_2 {
+  border: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  margin: 10px 15px;
+  width: 80%;
+}
+
+/* Profile links section */
+.profilelinks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+
+.profilelinks a {
+  padding: 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  gap: 5px; /* Space text/icon */
+  width: 205px;
+  height: 55px;
+  position: relative;
+  margin: 0;
+  text-decoration: none;
+  color: #000000;
+  padding-left: 10px;
+}
+
+.profilelinks img {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 4%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  margin-left: 0px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.profilelinks a:hover {
+  background-color: hsl(136, 75%, 69%);
+  cursor: pointer;
+  width: 210px;
+  height: 55px;
+}
+.profilelinks a:hover img {
+    background-color: #ffffff;
+    transform: translateX(5px);
+}
+.profile_text {
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 39px;
+}
+
+.profilelinks a {
+  justify-content: flex-start; /* Align items to the start */
+  padding-left: 12px;
+}
+.profilelinks a:hover .profile_text {
+  color: #ffffff;
+}
+.logout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+  margin-top: 90%;
+}
+.logout a {
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  gap: 5px; /*space text/icon*/
+  width: 210px;
+  height: 55px;
+  text-decoration: none;
+  color: #000000;
+  padding-left: 12px;
+}
+.logout a:hover {
+  background-color: hsl(0, 100%, 51%);
+  border-radius: 12px;
+  cursor: pointer;
+  width: 210px;
+  height: 55px;
+  color: #ffffff;
+}
+.logout img {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 36px;
+  position: static;
+  transition: transform 0.3 ease;
+}
+.logout a:hover img {
+  filter: brightness(0) invert(1);
+}
+/*logout popup*/
+.logout_popup {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.logout_content {
+  background-color: #fff;
+  margin: 18% auto;
+  padding: 32px;
+  border: 1px solid #888;
+  width: 320px;
+  text-align: center;
+  border-radius: 8px;
+}
+.logout_content p {
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.logout_content button {
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logout_content button.logout_button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.logout_content button.cancel_button {
+  background-color: #e9e9e9;
+  color: black;
+}
+.logout_content button.logout_button:hover {
+  background-color: #d42828;
+}
+.logout_content button.cancel_button:hover {
+  background-color: #d6d6d6;
+}
+/* Main content area adjustment */
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 235px);
+  padding: 20px;
+}

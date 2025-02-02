@@ -14,10 +14,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Quicksand:wght@300..700&family=Varela+Round&display=swap"
+      href="https://fonts.googleapis.com/css2?
+        family=Anek+Devanagari:wght@100..800&
+        family=Jost:ital,wght@0,100..900;1,100..900&
+        family=Roboto:ital,wght@0,100..900;1,100..900&
+        family=Bebas+Neue&
+        family=Quicksand:wght@300..700&
+        family=Varela+Round&
+        display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <div class="main-content">
@@ -26,17 +36,22 @@
         <h2 class="subtitle">Student list</h2>
         <div class="header-container">
           <label class="all-students">
-            <input type="checkbox" id="all_students_checkbox" style="display: none" />
-            All student&nbsp;&nbsp;<!----></label>
+            <input type="checkbox" id="all_students_checkbox" />
+            All student&nbsp;&nbsp;</label
+          >
           <div class="search">
             <span><i class="bx bx-search-alt-2"></i></span>
-            <input type="text" placeholder="Search" />
-            <a class="add_new" href="#divOne">+&nbsp;&nbsp;&nbsp;&nbsp; Add New</a>
-            <button class="edit" id="edit_button"><i class="bx bxs-pencil"></i>Edit</button>
+            <input type="text" id="search_input" placeholder="Search" />
+            <a class="add_new" href="#divOne"
+              >+&nbsp;&nbsp;&nbsp;&nbsp; Add New</a
+            >
+            <button class="edit" id="edit_button">
+              <i class="bx bxs-pencil"></i>Edit
+            </button>
           </div>
         </div>
         <div class="table_content">
-          <table>
+          <table id="student_table">
             <thead>
               <tr>
                 <th style="width: 300px">ID</th>
@@ -47,9 +62,9 @@
                 <th>RENDERED HOURS</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="student_table">
               <tr>
-                <td>03-2324-031234</td>
+                <td>03-2324-031584</td>
                 <td>John Doe</td>
                 <td>50</td>
                 <td>Computer Science</td>
@@ -74,14 +89,28 @@
               </tr>
             </tbody>
           </table>
+         <div id="no-results" class="no_results">No Results for
+          <div id="search_term"></div></div>
+         <div class="img_no_result" id="img_res">
+          <img src="/images/Searchnotfound.png" alt="No Results Found">
+          <h3>No results found for your search.</h3>
+         </div>
         </div>
+      </div>
+    </div>
+    <!--delete popup-->
+    <div class="delete_popup" id="delete_warning">
+      <div class="delete_content">
+        <p>Are you sure you want to delete the selected students?</p>
+        <button class="delete_button" onclick="delete_selected()">Yes</button>
+        <button class="cancel_button" onclick="hide_delete_popup()">No</button>
       </div>
     </div>
     <div class="wrapper">
       <div class="sidebar">
         <div class="top">
           <div class="logo">
-            <a href="html_sidebar.html">
+            <a href="/htmlsidebar/html_sidebar.html">
               <img
                 src="/images/phinmasvg.svg"
                 alt="Upang logo"
@@ -95,7 +124,7 @@
         <div class="user">
           <i class="bx bx-user-circle"></i>
           <div class="name">
-            <p>John Doe</p>
+            <p>Joshua Co</p>
             <p class="role">Admin</p>
           </div>
         </div>
@@ -113,7 +142,7 @@
           </li>
           <li>
             <i class="bx bx-news"></i>
-            <a href="#" class="menu">HK Student</a>
+            <a href="/htmlsidebar/hkstudent_sidebar.html" class="menu">HK Student</a>
           </li>
         </ul>
 
@@ -131,7 +160,7 @@
         </div>
 
         <div class="logout">
-          <a href="#" onclick="logout()">
+          <a href="#" onclick="show_logout()">
             <img
               src="/images/logout-svgrepo-com.svg"
               alt="click to logout"
@@ -142,25 +171,63 @@
         </div>
       </div>
     </div>
+    <!--logout popup-->
+    <div class="logout_popup" id="logout_warning">
+      <div class="logout_content">
+        <p>Are you sure you want to logout?</p>
+        <button class="logout_button" onclick="logout()">Yes</button>
+        <button class="cancel_button" onclick="hide_logout()">No</button>
+      </div>
+    </div>
     <div class="overlay" id="divOne">
       <div class="popup">
-        <h2>Add New Student</h2>
-        <a href="#" class="close  " id="closePopup">&times;</a>
+        <h2>Add Student</h2>
+        <a href="#" class="close" id="closePopup">&times;</a>
         <div class="popup-content">
           <form action="" method="post">
             <label for="student_id">Student ID</label>
-            <input type="text" id="student_id" name="student_id" placeholder="Enter Student ID" />
-            <label for="student_name">Student Name</label>
-            <input type="text" id="student_name" name="student_name" placeholder="Enter Student Name" />
-            <label for="hk_type">HK Type</label>
-            <input type="text" id="hk_type" name="hk_type" placeholder="Enter HK Type" />
-            <label for="course_code">Course Code</label>
-            <input type="text" id="course_code" name="course_code" placeholder="Enter Course Code" />
-            <label for="hk_duty_status">HK Duty Status</label>
-            <input type="text" id="hk_duty_status" name="hk_duty_status" placeholder="Enter HK Duty Status" />
-            <label for="rendered_hours">Rendered Hours</label>
-            <input type="text" id="rendered_hours" name="rendered_hours" placeholder="Enter Rendered Hours" />
-            <button type="submit">Add</button>
+            <input
+              type="text"
+              id="student_id"
+              name="student_id"
+              placeholder="Enter Student ID"
+              required
+            />
+            <label for="student_name">Student name</label>
+            <input
+              type="text"
+              id="student_name"
+              name="student_name"
+              placeholder="Enter Student Name"
+              required
+            />
+            <label for="hk_type">Hk type</label>
+            <select id="hk_type" name="hk_type">
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="75">75</option>
+            </select>
+            <label for="course_code">Course code</label>
+            <input
+              type="text"
+              id="course_code"
+              name="course_code"
+              placeholder="EX: BSA"
+            />
+            <label for="hk_duty_status">Hk duty status</label>
+            <select id="hk_duty_status" name="hk_duty_status">
+              <option value="FACILITATOR">Hk facilitator</option>
+              <option value="COORDINATOR">Hk office duty</option>
+              <option value="ADMIN">Man power</option>
+            </select>
+            <label for="rendered_hours">Rendered hours</label>
+            <input
+              type="text"
+              id="rendered_hours"
+              name="rendered_hours"
+              placeholder="Enter Rendered Hours"
+            />
+            <button type="submit">Save Student</button>
           </form>
         </div>
       </div>
