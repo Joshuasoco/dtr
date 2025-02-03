@@ -14,8 +14,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?
         family=Anek+Devanagari:wght@100..800&
@@ -28,79 +28,81 @@
       rel="stylesheet"
     />
   </head>
-<body>
-  <div class="wrapper">
-    <div class="sidebar">
-      <div class="top">
-        <div class="logo">
-          <a href="/htmlsidebar/html_sidebar.html">
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="top">
+          <div class="logo">
+            <a href="/htmlsidebar/html_sidebar.html">
+              <img
+                src="/images/phinmasvg.svg"
+                alt="Upang logo"
+                class="phinmalogo"
+              />
+              <span class="title">HK Duty Tracker</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="user">
+          <i class="bx bx-user-circle"></i>
+          <div class="name">
+            <p>Joshua Co</p>
+            <p class="role">Admin</p>
+          </div>
+        </div>
+
+        <hr class="line" />
+
+        <ul>
+          <li>
+            <i class="bx bx-home"></i>
+            <a href="/htmlsidebar/html_sidebar.html" class="menu">Home</a>
+          </li>
+          <li>
+            <i class="bx bx-store"></i>
+            <a href="dashboard_sidebar.html" class="menu">Dashboard</a>
+          </li>
+          <li>
+            <i class="bx bx-news"></i>
+            <a href="/htmlsidebar/hkstudent_sidebar.html" class="menu"
+              >HK Student</a
+            >
+          </li>
+        </ul>
+
+        <hr class="line_2" />
+
+        <div class="profilelinks">
+          <a href="#">
             <img
-              src="/images/phinmasvg.svg"
-              alt="Upang logo"
-              class="phinmalogo"
+              src="/images/profile-minus-1353-svgrepo-com.svg"
+              alt="click to visit profile"
+              class="profilelogo"
             />
-            <span class="title">HK Duty Tracker</span>
+            <span class="profile_text">Profile</span>
+          </a>
+        </div>
+
+        <div class="logout">
+          <a href="#" onclick="show_logout()">
+            <img
+              src="/images/logout-svgrepo-com.svg"
+              alt="click to logout"
+              class="logoutlogo"
+            />
+            <span class="logout_text">Logout</span>
           </a>
         </div>
       </div>
-
-      <div class="user">
-        <i class="bx bx-user-circle"></i>
-        <div class="name">
-          <p>Joshua Co</p>
-          <p class="role">Admin</p>
-        </div>
-      </div>
-
-      <hr class="line" />
-
-      <ul>
-        <li>
-          <i class="bx bx-home"></i>
-          <a href="/htmlsidebar/html_sidebar.html" class="menu">Home</a>
-        </li>
-        <li>
-          <i class="bx bx-store"></i>
-          <a href="dashboard_sidebar.html" class="menu">Dashboard</a>
-        </li>
-        <li>
-          <i class="bx bx-news"></i>
-          <a href="/htmlsidebar/hkstudent_sidebar.html" class="menu">HK Student</a>
-        </li>
-      </ul>
-
-      <hr class="line_2" />
-
-      <div class="profilelinks">
-        <a href="#">
-          <img
-            src="/images/profile-minus-1353-svgrepo-com.svg"
-            alt="click to visit profile"
-            class="profilelogo"
-          />
-          <span class="profile_text">Profile</span>
-        </a>
-      </div>
-
-      <div class="logout">
-        <a href="#" onclick="show_logout()">
-          <img
-            src="/images/logout-svgrepo-com.svg"
-            alt="click to logout"
-            class="logoutlogo"
-          />
-          <span class="logout_text">Logout</span>
-        </a>
+    </div>
+    <div class="logout_popup" id="logout_warning">
+      <div class="logout_content">
+        <p>Are you sure you want to logout?</p>
+        <button class="logout_button" onclick="logout()">Yes</button>
+        <button class="cancel_button" onclick="hide_logout()">No</button>
       </div>
     </div>
-  </div>
-  <div class="logout_popup" id="logout_warning">
-    <div class="logout_content">
-      <p>Are you sure you want to logout?</p>
-      <button class="logout_button" onclick="logout()">Yes</button>
-      <button class="cancel_button" onclick="hide_logout()">No</button>
-    </div>
-  </div>
-  <script src="/script/hkscript.js"></script>
-</body>
+    <script src="/script/hkscript.js"></script>
+  </body>
 </html>

@@ -179,30 +179,32 @@ ul li:hover a {
   width: 80%;
 }
 
-/* Profile links section */
-.profilelinks {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  padding-right: 10px;
-}
-
+/* profile links section */
 .profilelinks a {
-  padding: 20px 20px;
-  border-radius: 10px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px 0;
+  border-radius: 4%;
   display: flex;
   align-items: center;
-  transition: all 0.3s;
-  gap: 5px; /* Space text/icon */
+  gap: 35px;
+  transition: all 0.3s ease;
   width: 205px;
-  height: 55px;
   position: relative;
-  margin: 0;
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: transparent;
   text-decoration: none;
   color: #000000;
-  padding-left: 10px;
+}
+
+.profilelinks a:hover {
+  background-color: hsl(136, 75%, 69%);
+  cursor: pointer;
+  width: 210px;
+  border-radius: 12px;
+  color: #ffffff;
 }
 
 .profilelinks img {
@@ -211,35 +213,25 @@ ul li:hover a {
   padding: 10px;
   border-radius: 4%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  margin-left: 0px;
-  position: relative;
+  position: absolute;
+  left: 5px;
   transition: transform 0.3s ease;
 }
 
-.profilelinks a:hover {
-  background-color: hsl(136, 75%, 69%);
-  cursor: pointer;
-  width: 210px;
-  height: 55px;
-}
 .profilelinks a:hover img {
-    background-color: #ffffff;
-    transform: translateX(5px);
-}
-.profile_text {
-  font-family: "Varela Round", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  margin-left: 39px;
+  background-color: #ffffff;
+  transform: translateX(5px);
 }
 
-.profilelinks a {
-  justify-content: flex-start; /* Align items to the start */
-  padding-left: 12px;
+.profile_text {
+  padding-left: 60px;
+  margin-left: 30px;
 }
+
 .profilelinks a:hover .profile_text {
   color: #ffffff;
 }
+
 .logout {
   width: 100%;
   display: flex;
@@ -328,7 +320,7 @@ ul li:hover a {
 .logout_content button.cancel_button:hover {
   background-color: #d6d6d6;
 }
-/* Main content area adjustment */
+/* main */
 .main-content {
   margin-left: 260px;
   width: calc(100% - 235px);

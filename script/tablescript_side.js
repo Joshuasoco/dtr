@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (visible) visibleCount++;
     });
 
-    // Show/hide no results message and image
     if (visibleCount === 0) {
       noResults.style.display = "block";
       img_no_result.style.display = "block";
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //all students checkbox
   allStudentsCheckbox.addEventListener("change", (e) => {
     const checkboxes = document.querySelectorAll(".row-checkbox");
     checkboxes.forEach((checkbox) => {
@@ -64,33 +62,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Function to toggle checkboxes
   const toggleCheckboxes = (show) => {
-    // Toggle "All student" checkbox
     allStudentsCheckbox.style.display = show ? "inline" : "none";
 
     tableRows.forEach((row, index) => {
       if (index === 0) return; // Skip header row
 
       const idCell = row.children[0];
+      const renderedHoursCell = row.querySelector("td:nth-child(6)");
       const currentId = idCell.textContent;
 
       if (show) {
         if (!idCell.querySelector("input[type='checkbox']")) {
           idCell.textContent = "";
-
           const checkbox = document.createElement("input");
           checkbox.type = "checkbox";
           checkbox.className = "row-checkbox";
-          checkbox.style.marginRight = "10px";
-
+          checkbox.style.marginRight = "10px"; // Space before the ID
           idCell.appendChild(checkbox);
           idCell.appendChild(document.createTextNode(currentId));
+        }
+      
+        if (!renderedHoursCell.querySelector(".hours-button")) {
+          const currentHours = renderedHoursCell.textContent;
+          const container = document.createElement("div");
+          container.className = "hours-container"; // Use flexbox for proper alignment
+          container.innerHTML = `
+            <span>${currentHours}</span>
+            <button class="hours-button">
+              <img src="/images/pen.svg" alt="edit hours" class="hours-icon">
+            </button>
+          `;
+          renderedHoursCell.textContent = "";  // Clear the cell content
+          renderedHoursCell.appendChild(container);
+      
+          const button = container.querySelector(".hours-button");
+          button.addEventListener("click", (e) => {
+            e.stopPropagation(); 
+            window.location.href = "/htmlsidebar/hkstudent_sidebar.html";
+            console.log("Edit hours clicked for row:", index); 
+          });
         }
       } else {
         const checkbox = idCell.querySelector("input[type='checkbox']");
         if (checkbox) {
-          idCell.textContent = currentId;
+          idCell.textContent = currentId; 
+        }
+      
+        const hoursContainer = renderedHoursCell.querySelector(".hours-container");
+        if (hoursContainer) {
+          const hoursText = hoursContainer.querySelector("span").textContent;
+          renderedHoursCell.textContent = hoursText; 
         }
       }
     });
@@ -101,12 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const icon = button.querySelector("i");
 
     if (button.classList.contains("delete-mode")) {
-      // Check if any checkboxes are selected
       const selectedCheckboxes = document.querySelectorAll(
         ".row-checkbox:checked"
       );
       if (selectedCheckboxes.length === 0) {
-        // Switch back to Edit mode
         icon.classList.remove("bxs-trash");
         icon.classList.add("bxs-pencil");
         button.classList.remove("delete-mode");
@@ -117,10 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleCheckboxes(false); // hide checkboxes
         return;
       }
-      // When already in delete mode and checkboxes are selected, show the delete popup
       show_delete_popup();
     } else {
-      // Switching to delete mode
+      
       icon.classList.remove("bxs-pencil");
       icon.classList.add("bxs-trash");
       button.classList.add("delete-mode");
@@ -136,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupDiv = document.getElementById("divOne");
 
   addNewLink.addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
+    e.preventDefault(); 
     if (popupDiv) {
       popupDiv.style.display = "block";
     }
@@ -168,7 +187,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
   }
 });
 //delete popup table
-// Function to show delete confirmation popup
 function show_delete_popup() {
   document.getElementById("delete_warning").style.display = "block";
 }
@@ -183,16 +201,13 @@ function delete_selected() {
     alert("No student selected for deletion.");
     return;
   }
-
-  // Hide popup and simulate deletion
-  hide_delete_popup(); // Using the hide_delete_popup function instead of direct manipulation
+  hide_delete_popup(); 
 
   selectedCheckboxes.forEach((checkbox) => {
-    checkbox.closest("tr").remove(); // Remove the row
+    checkbox.closest("tr").remove(); 
   });
   alert("Selected students deleted.");
 }
-
 //logout popup js
 function show_logout() {
   console.log("Show logout popup");
