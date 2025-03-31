@@ -1,5 +1,10 @@
 # Duty Time Record System
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Joshuasoco/hk-duty-tracker/pulls)
+![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue)
+![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange)
+
 A web-based Daily Time Record (DTR) management system built with PHP and MySQL, designed to handle attendance tracking for educational institutions.
 
 ## Features
