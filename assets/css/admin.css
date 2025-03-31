@@ -1,0 +1,53 @@
+/* Remove the redundant profile styles at the bottom of your file (lines ~1364 to the end) */
+/* They're duplicating what you already have with minor differences */
+
+/* Keep your existing styles but consolidate the .main-content class */
+.main-content {
+  flex: 1;
+  padding: 20px 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+}
+
+.main-content.expanded {
+  margin-left: 0;
+}
+
+/* Consolidate your profile styles into one section */
+/* Keep the most complete version (the one at the bottom of your file) */
+
+/* Fix your media queries by combining ones with the same breakpoints */
+@media (max-width: 991px) {
+  .sidebar {
+    transform: translateX(-250px);
+    width: 250px;
+    left: 0;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  .close-sidebar {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

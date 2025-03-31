@@ -1,0 +1,29 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Force HTTPS (optional, can be used if you have SSL enabled)
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block access to sensitive files
+<FilesMatch "\.(env|ini|log|bak|swp|db|sql)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Redirect non-www to www (optional)
+RewriteCond %{HTTP_HOST} ^example\.com [NC]
+RewriteRule ^(.*)$ https://www.example.com/$1 [L,R=301]
+
+# Clean URLs (remove .php extension)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+# Prevent directory browsing
+Options -Indexes
+
+# Enable caching for certain file types
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js|woff2|ttf|eot)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

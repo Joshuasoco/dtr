@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .page-title {
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 72px;
+    font-weight: bold;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    letter-spacing: 2px;
+    z-index: -1;
+  }
+  
+  .notifications-container {
+    max-width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  .mark-all-read {
+    background: #178fbe;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .mark-all-read:hover {
+    background: #000000;
+  }
+  
+  .notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    width: 100%;
+    gap: 10px; /* Ensures even spacing between elements */
+  }
+  
+  .notifications-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+    flex-grow: 1; /* Ensures the title takes up available space */
+  }
+  
+  .notifications-header .actions {
+    display: flex;
+    gap: 10px; /* Adjust spacing between buttons/icons */
+    align-items: center;
+  }
+  
+  .notifications-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notification-item {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #adadad;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .mark-read {
+    margin-right: 0;
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3498db;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .mark-read:hover {
+    color: #2c3e50;
+  }
+  .mark-read i {
+    margin-right: 5px;
+  }
+  
+  .notification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-icon {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    background: #3498db;
+    font-size: 12px;
+  }
+  
+  .notification-icon i {
+    font-size: 14px !important;
+    color: white;
+  }
+  
+  .notification-item.pending .notification-icon {
+    background: #f39c12;
+  }
+  
+  .notification-content {
+    flex-grow: 1;
+  }
+  
+  .notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Reduce space slightly */
+    width: 100%;
+    padding-left: 2px !important;
+  }
+  
+  .notification-title {
+    font-weight: 600;
+    margin: 0;
+    color: #2c3e50;
+    font-size: 16px;
+  }
+  
+  .notification-message {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  
+  .notification-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .notification-time {
+      color: #888;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .notification-time i {
+      margin-top: 2px;
+      margin-left: 0; 
+    } 
+  
+  .notification-user {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 12px;
+    background: #000000;
+    border-radius: 15px;
+  }
+  
+  .statuspending {
+    background: #fdf2f2;
+    color: #e74c3c;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
